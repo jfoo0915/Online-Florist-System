@@ -9,7 +9,7 @@ import java.util.Date;
 import java.time.LocalDate;
 /**
  *
- * @author Acer
+ * @author Lim Zhen Foo
  */
 public class OrderDetails {
     private Product product;

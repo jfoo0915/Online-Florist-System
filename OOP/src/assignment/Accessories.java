@@ -7,7 +7,7 @@ package assignment;
 
 /**
  *
- * @author Acer
+ * @author Lim Zhen Foo
  */
 public class Accessories extends Product{
     private String type;

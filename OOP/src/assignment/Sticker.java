@@ -7,7 +7,7 @@ package assignment;
 
 /**
  *
- * @author Acer
+ * @author Lim Zhen Foo
  */
 public class Sticker extends Accessories{
     private String colour;

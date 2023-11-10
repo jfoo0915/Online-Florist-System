@@ -7,7 +7,7 @@ package assignment;
 import java.util.ArrayList;
 /**
  *
- * @author Acer
+ * @author Lim Zhen Foo
  */
 public class Product {
     protected static int productCount=1000;

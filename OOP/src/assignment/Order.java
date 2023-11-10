@@ -7,7 +7,7 @@ package assignment;
 
 /**
  *
- * @author Acer
+ * @author Lim Zhen Foo
  */
 public class Order {
     private int orderID = 1000;

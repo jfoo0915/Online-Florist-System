@@ -3,7 +3,18 @@ package assignment;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Random;
-
+//VER 
+import java.sql.Connection;
+import java.sql.DriverManager; 
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+//VER 
+/**
+ * 
+ * @author Lim Zhen Foo, Lim Wen Jing, Ko Yun Xuan
+ */
 public class CombineAssignment {
 
     public static void main(String[] args) {
@@ -620,7 +631,7 @@ public class CombineAssignment {
     }
     
     public static void createStaff(ArrayList<Staff> u){
-        u.add(new Staff("Wen Jing", "2011687", "1234"));
+        u.add(new Staff("Staff1", "2011111", "1234"));
     }
     
     public static void createCustomer(ArrayList<Customer> u){
@@ -1011,9 +1022,24 @@ public static void deleteCourier(ArrayList<Courier> c) {
     
     //Order module method --------------------------------------------------------------------------------------------------------------
    public static void createProduct(ArrayList product){
+       //VER 
+       try {
+            Class.forName("org.apache.derby.jdbc.ClientDriver");
+            Connection connection = (Connection)DriverManager.getConnection("jdbc:derby://localhost:1527/SampleDB", "Finexus", "1234");
+            //database name: Product 
+            //table name: FLOWER
+            String sql = "INSERT INTO FLOWER (name, price, stock, colour) VALUES ('Rose', 5.00, 500, 'Red')";
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.execute();
+        } catch (SQLException ex) {
+            Logger.getLogger(CombineAssignment.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(CombineAssignment.class.getName()).log(Level.SEVERE, null, ex);
+        }
         product.add(new Flower("Rose",5.00,500,"Red"));
         product.add(new Flower("Lily",6.00,300,"White"));
         product.add(new Flower("Orchid",7.00,600,"Purple"));
+        //VER 
         product.add(new Sticker("Sticker",5.00,250,"Decoration","Yellow",300));
         product.add(new Sticker("Sticker",6.00,250,"Decoration","Yellow",600));
         product.add(new Sticker("Sticker",7.00,250,"Decoration","Yellow",900));
